@@ -18,7 +18,7 @@
 		<module>javasolutions</module>
     </modules>
 
-	<description>Project Euler solutions in multiple languages</description>
+	<description>Solutions in multiple languages</description>
 	<properties>
 		<java.version>17</java.version>
 		<!-- Swagger -->

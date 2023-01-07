@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 **/
 @Slf4j
 @Component
-public class Euler1 {
-    public void solution1(){
+public class E_1 {
+    public String solution1(){
         int sum = 0;
         for(int i = 1; i < 1000; i++){
             if(i % 3 == 0 || i % 5 == 0){
@@ -20,9 +20,10 @@ public class Euler1 {
         }
 
         log.info("Sum is: {}", sum);
+        return getMethodName();
     }
 
-    public void solution2(){
+    public String solution2(){
         int sum = 0;
         for(int i = 1; i < 1000; i++){
             if(i % 3 == 0){
@@ -33,6 +34,39 @@ public class Euler1 {
         }
 
         log.info("Sum is: {}", sum);
+        return getMethodName();
+    }
+
+    public String solution3(){
+        int i = 0;
+        int sum = 0;
+        while(i < 1000){
+            if(i % 3 == 0 || i % 5 == 0){
+                sum += i;
+            }
+            i++;
+        }
+
+        log.info("Sum is: {}", sum);
+        return getMethodName();
+    }
+
+    public String solution4(){
+        int i = 999;
+        int sum = 0;
+        while(i > 0){
+            if(i % 3 == 0 || i % 5 == 0){
+                sum += i;
+            }
+            i--;
+        }
+
+        log.info("Sum is: {}", sum);
+        return getMethodName();
+    }
+
+    private String getMethodName(){
+        return E_1.class.getMethods()[3].getName();
     }
 
 
