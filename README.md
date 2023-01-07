@@ -1,2 +1,2 @@
 # leuler
-Project Euler solutions in multiple languages
+Solutions in multiple languages
