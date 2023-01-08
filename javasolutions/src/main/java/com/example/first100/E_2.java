@@ -1,12 +1,15 @@
 package com.example.first100;
 
 import com.example.helper.Helper;
+import io.swagger.models.auth.In;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -22,6 +25,8 @@ import java.util.stream.Collectors;
 public class E_2 {
     private final Helper helper;
     private static final int FOUR_MILLION = 4000000;
+    private Map<Integer, Integer> memoizationMap = new HashMap<>();
+
     public String solution1(){
         List<Integer> fibonacciList = new ArrayList<>();
         int first = 0;
@@ -61,6 +66,7 @@ public class E_2 {
         return getMethodName();
     }
 
+    /** USING RECURSION**/
     public String solution3(){
         int sum = 0;
         int index = 0;
@@ -84,6 +90,39 @@ public class E_2 {
         }
 
         return fibRecursion(count - 2) + fibRecursion(count - 1);
+    }
+
+    public String solution4(){
+        int sum = 0;
+        int index = 0;
+        while(fibMemoization(index) < FOUR_MILLION){
+            int fibNum = fibMemoization(index);
+            if(fibNum % 2 == 0){
+                sum += fibNum;
+            }
+            index++;
+        }
+
+        log.info("Sum of even numbers: {}", sum);
+        return getMethodName();
+    }
+
+    private int fibMemoization(int count){
+        if(count == 0){
+            return 0;
+        }else if(count == 1){
+            return 1;
+        }
+
+        if(memoizationMap.containsKey(count)){
+            return memoizationMap.get(count);
+        }
+
+        int nextTerm = fibMemoization(count - 2) + fibMemoization(count - 1);
+
+        memoizationMap.put(count, nextTerm);
+
+        return nextTerm;
     }
 
 
