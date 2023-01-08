@@ -18,7 +18,7 @@ public class CustomRunner implements ApplicationRunner {
     public void run(ApplicationArguments args){
 
         long startTime = System.nanoTime();
-        String methodName = e2.solution4();
+        String methodName = e2.solution5();
         long stopTime = System.nanoTime();
         long elapsedTime = stopTime - startTime;
 
