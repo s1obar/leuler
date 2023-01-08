@@ -1,5 +1,7 @@
 package com.example.first100;
 
+import com.example.helper.Helper;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +12,9 @@ import org.springframework.stereotype.Component;
 **/
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class E_1 {
+    private final Helper helper;
     public String solution1(){
         int sum = 0;
         for(int i = 1; i < 1000; i++){
@@ -66,8 +70,6 @@ public class E_1 {
     }
 
     private String getMethodName(){
-        return E_1.class.getMethods()[3].getName();
+        return helper.getMethodName(E_1.class,3);
     }
-
-
 }
