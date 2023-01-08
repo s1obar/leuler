@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.first100.E_1;
+import com.example.first100.E_2;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
