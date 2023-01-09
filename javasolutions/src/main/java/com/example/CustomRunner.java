@@ -16,11 +16,12 @@ public class CustomRunner implements ApplicationRunner {
     private final E_3 e3;
     private final E_4 e4;
     private final E_5 e5;
+    private final E_6 e6;
     @Override
     public void run(ApplicationArguments args){
 
         long startTime = System.nanoTime();
-        String methodName = e5.solution1();
+        String methodName = e6.solution1();
         long stopTime = System.nanoTime();
         long elapsedTime = stopTime - startTime;
 
