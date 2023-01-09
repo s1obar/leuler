@@ -3,6 +3,7 @@ package com.example;
 import com.example.first100.E_1;
 import com.example.first100.E_2;
 import com.example.first100.E_3;
+import com.example.first100.E_4;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -16,11 +17,12 @@ public class CustomRunner implements ApplicationRunner {
     private final E_1 e1;
     private final E_2 e2;
     private final E_3 e3;
+    private final E_4 e4;
     @Override
     public void run(ApplicationArguments args){
 
         long startTime = System.nanoTime();
-        String methodName = e3.solution1();
+        String methodName = e4.solution1();
         long stopTime = System.nanoTime();
         long elapsedTime = stopTime - startTime;
 
