@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.first100.E_6;
 import com.example.first100.E_7;
+import com.example.first100.E_8;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;

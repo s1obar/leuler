@@ -15,28 +15,8 @@ import org.springframework.stereotype.Component;
 public class E_7 {
 
     private final Helper helper;
+
     public String solution1(){
-
-        int finalPrime = 0;
-        int index = 0;
-        while(index < 10001){
-            finalPrime++;
-            for(int i = 2; true; i++){
-                if(finalPrime % i == 0 && finalPrime != i){
-                    break;
-                }else if(finalPrime == i){
-                    index++;
-                    break;
-                }
-            }
-        }
-
-        log.info("10001. prime is: {}", finalPrime);
-
-        return  getMethodName();
-    }
-
-    public String solution2(){
         long finalPrime = nthPrime(10001);
 
         log.info("10001. prime number is: {}", finalPrime);
@@ -60,11 +40,9 @@ public class E_7 {
     private boolean isPrime(long n) {
         if (n < 2){
             return false;
-        } else if (n == 2) {
-            return true;
         }
-//TODO: figure out why Math.sqrt() is used
-        for (int i = 2; i < Math.sqrt(n) + 1; i++){
+
+        for (int i = 2; i <= Math.sqrt(n); i++){
             if (n % i == 0){
                 return false;
             }
