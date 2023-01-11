@@ -66,19 +66,22 @@ public class E_8 {
                                                 + "05886116467109405077541002256983155200055935729725"
                                                 + "71636269561882670428252483600823257530420752963450";
     public String solution1(){
-        final int adjacentLength = 13;
+        int adjacentNumsLength = 13;
         long largestProduct = 0;
 
-        for (int i = 0; i < bigNumber.length() - adjacentLength + 1; i ++) {
+        for (int i = 0; i < bigNumber.length() - adjacentNumsLength + 1; i ++) {
             long product = 1;
-            List<Integer> largestProductDigits = new ArrayList<>();
-            for (int j = i; j < i + adjacentLength; j++) {
+
+            for (int j = i; j < i + adjacentNumsLength; j++) {
                 product *= Integer.parseInt(bigNumber.substring(j, j + 1));
             }
 
-            if (product > largestProduct) largestProduct = product;
+            if (product > largestProduct){
+                largestProduct = product;
+            }
         }
-        System.out.println(largestProduct);
+
+        log.info("Largest product of 13 adjacent digits is: {}", largestProduct);
 
         return  getMethodName();
     }
