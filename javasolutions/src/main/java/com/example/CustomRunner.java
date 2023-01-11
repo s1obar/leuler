@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.first100.E_10;
 import com.example.first100.E_8;
 import com.example.first100.E_9;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 public class CustomRunner implements ApplicationRunner {
-    private final E_9 e9;
+    private final E_10 e9;
     @Override
     public void run(ApplicationArguments args){
 

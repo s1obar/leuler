@@ -6,39 +6,39 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
-    By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-    What is the 10 001st prime number?
+    The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+    Find the sum of all the primes below two million.
 **/
 @Slf4j
 @RequiredArgsConstructor
 @Component
-public class E_7 {
+public class E_10 {
 
     private final Helper helper;
 
     public String solution1(){
-        long finalPrime = nthPrime(10001);
+        long sum = sumOfAllPrimesLessThen(2000000);
 
-        log.info("10001. prime number is: {}", finalPrime);
+        log.info("SUm of all primes below 2000000 is: {}", sum);
 
         return  getMethodName();
     }
 
-    private long nthPrime(long nthPrime) {
-        int numberOfPrimes = 0;
+    private long sumOfAllPrimesLessThen(long number) {
         long num = 1;
+        long sum = 0;
 
-        while (numberOfPrimes < nthPrime) {
+        while (num < number) {
             num++;
             if (helper.isPrime(num)) {
-                numberOfPrimes++;
+                sum += num;
             }
         }
-        return num;
+        return sum;
     }
 
 
     private String getMethodName(){
-        return helper.getMethodName(E_7.class,0);
+        return helper.getMethodName(E_10.class,0);
     }
 }
