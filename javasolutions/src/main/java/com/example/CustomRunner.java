@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.first100.E_8;
+import com.example.first100.E_9;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -11,12 +12,12 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 public class CustomRunner implements ApplicationRunner {
-    private final E_8 e8;
+    private final E_9 e9;
     @Override
     public void run(ApplicationArguments args){
 
         long startTime = System.nanoTime();
-        String methodName = e8.solution1();
+        String methodName = e9.solution1();
         long stopTime = System.nanoTime();
         long elapsedTime = stopTime - startTime;
 
